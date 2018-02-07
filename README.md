@@ -17,11 +17,11 @@ CSCI 4448 team project
 **Actors**:admin, user
 
 **Funtionality**: 
-                  1.item The admin, users can sign up
-                  1.item The admin, users can log in
-                  1.item The admin, users can see posts
-                  1.item The admin, users can edit posts
-                  1.item The admin can add users
-                  1.item The admin, users can post votes
-                  1.item The admin can managae the black list and the white list
-                  1.item The admin, users can search posts
+                  1. item The admin, users can sign up
+                  1. item The admin, users can log in
+                  1. item The admin, users can see posts
+                  1. item The admin, users can edit posts
+                  1. item The admin can add users
+                  1. item The admin, users can post votes
+                  1. item The admin can managae the black list and the white list
+                  1. item The admin, users can search posts
