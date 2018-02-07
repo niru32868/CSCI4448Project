@@ -15,7 +15,7 @@ CSCI 4448 team project
 
 **Description**: The game dasboard website which users can get some information about games and post their own news or request. The user also can do votes or games exchange in the website.
 
-**Actors**:admin, user
+**Actors**: admin, user
 
 **Funtionality**: 
 1. The admin, users can sign up
