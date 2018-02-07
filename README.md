@@ -1,10 +1,11 @@
 # CSCI4448Project
 CSCI 4448 team project
 
-**Team**: - Ningtian Ruan
-          - Yang Yang
-          - Zhaozhong Peng
-          - Yuhou Wang
+**Team**: 
+- Ningtian Ruan
+- Yang Yang
+- Zhaozhong Peng
+- Yuhou Wang
           
 **GitHub Names**: 
 - Ningtian Ruan (niru32868)
