@@ -6,9 +6,9 @@ CSCI 4448 team project
           - Yuhou Wang
           
 **GitHub Names**: 
-- Ningtian Ruan(niru32868)
-- Yang Yang(yaya7263)
-- Zhaozhong Peng(pengsrif)
+- Ningtian Ruan (niru32868)
+- Yang Yang (yaya7263)
+- Zhaozhong Peng (pengsrif)
 - Yuhou Wang
                   
 **Title**: Game Dasboard
