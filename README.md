@@ -32,7 +32,11 @@ contain an upvote/downvote system for visibility as well as moderation. However,
 8. Users/Admins can search for certain threads or certain subreddit. 
 
 **[Optional] Stretch Functionality**: 
+
 9. Users can submit trading requests, detailing what they are willing to trade and what they want to trade for.
+
 10. Users can accept trade requests if they have what the other user is willing to trade for. 
+
 11. Users/Admins can host tournaments
+
 12. Users can join tournaments. 
