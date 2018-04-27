@@ -23,16 +23,12 @@
      
     <div align="center">
         <table border="1" cellpadding="5">
-            <caption><h2>List of Tournaments</h2></caption>
-            <caption><h2>Each Tournament has 16 MAX participants</h2></caption>
+            <caption><h2>SUCCESS: Updated List of Tournaments</h2></caption>
             <tr>
                 <th>Tournament Name</th>
                 <th>Game Name</th>
                 <th>Tournament Time</th>
                 <th>Tournament Info</th>
-                <th>Game Type</th>
-                <th>Game Description</th>
-                 <th>Registration</th>
             </tr>
             <c:forEach var="user" items="${listUsers.rows}">
                 <tr>
@@ -40,14 +36,12 @@
                     <td><c:out value="${user.GameName}" /></td>
                     <td><c:out value="${user.TournamentTime}" /></td>
                     <td><c:out value="${user.TournamentInfo}" /></td>
-                    <td><c:out value="${user.GameType}" /></td>
-                    <td><c:out value="${user.GameDescription}" /></td>
-                    <td><a href="/FirstSpringMVCProject/signup/${user.TournamentName}/${user.orderNumber}">Sign Up</a></td>
+                    <td><c:out value="${user.GameInfo.GameType}" /></td>
+                    <td><c:out value="${user.GameInfo.GameDescription}" /></td>
   
                 </tr>
             </c:forEach>
         </table>
-        <caption><h3><a href="/FirstSpringMVCProject/tournament.html">Create Tournament</a></h3></caption>
     </div>
 </body>
 </html>

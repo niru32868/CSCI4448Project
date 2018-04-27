@@ -1,6 +1,6 @@
 package com.gontuseries.studentadmissioncontroller;
 import java.util.ArrayList;
-
+//ORIGINAL IS FROM GONTU series, but I basically edited out everything
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -101,5 +101,26 @@ public class StudentAdmissionController {
 		
 		return model3;
 	}	
+	@RequestMapping(value = "/submittedTeam.html", method=RequestMethod.POST) //signup Page for teams
+	public ModelAndView submitTeamForm(@ModelAttribute("team1") Team team, BindingResult result) {
+		
+		 if (result.hasErrors()) {
+
+				ModelAndView model4 = new ModelAndView("TeamSignup");
+				return model4;
+		 }
+	  SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  session.beginTransaction();
+
+	  session.save(team);
+	  
+	  session.getTransaction().commit();
+	  session.close();
+	  sessionFactory.close();
+
+		ModelAndView model4 = new ModelAndView("TeamSignupSuccess");
+		return model4;
+	}
 }
 
