@@ -54,7 +54,7 @@ public class StudentAdmissionController {
 		return model2;
 	}
 	@RequestMapping(value="/submittedTournament.html", method=RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("GameName") String Game,@ModelAttribute("tournament1") Tournament tournament1, BindingResult result) {
+	public ModelAndView submitTournamentForm(@RequestParam("GameName") String Game,@ModelAttribute("tournament1") Tournament tournament1, BindingResult result) {
 		
 		 if (result.hasErrors()) {
 
