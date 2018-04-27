@@ -1,0 +1,15 @@
+
+Just about everything was changed, but there are unremoved DeadCode, or code copied for pom.xml
+Resources/Code used from: 
+
+
+Sources Used: 
+http://javawebtutor.com/articles/spring/spring-mvc-hibernate-crud-example.php
+
+https://www.gontu.org
+
+http://www.codejava.net/java-ee/jsp/how-to-list-records-in-a-database-table-using-jsp-and-jstl
+
+https://refactoring.guru/design-patterns/flyweight/java/example
+
+https://refactoring.guru/design-patterns/strategy
