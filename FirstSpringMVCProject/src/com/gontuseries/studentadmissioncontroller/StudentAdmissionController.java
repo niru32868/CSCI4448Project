@@ -80,7 +80,7 @@ public class StudentAdmissionController {
 	  
 	  session.getTransaction().commit();
 	  session.close();
-	  sessionFactory.close();
+	
 
 		ModelAndView model2 = new ModelAndView("TournamentSuccess");
 		return model2;
@@ -117,10 +117,30 @@ public class StudentAdmissionController {
 	  
 	  session.getTransaction().commit();
 	  session.close();
-	  sessionFactory.close();
+
 
 		ModelAndView model4 = new ModelAndView("TeamSignupSuccess");
 		return model4;
 	}
+	@RequestMapping(value = "viewOpponent/{orderNumber}", method=RequestMethod.GET) //signup Page for teams
+	public ModelAndView viewMatches(@PathVariable("orderNumber")int orderNumber) {
+		int[] matches; 
+		StrategyInterface FindMatches = new StrategyInterface();
+		if ( (orderNumber & 1) == 0 ) //even, gotten from https://stackoverflow.com/questions/7342237/check-whether-number-is-even-or-odd
+		{
+			FindMatches.setStrategy(new matchNearest());
+		}
+		else	//odd
+		{
+			FindMatches.setStrategy(new matchOpposite());
+		}
+		matches = FindMatches.executeStrategy(); 
+		String testing = "hello"; 
+		ModelAndView model3 = new ModelAndView("Matches");
+		model3.addObject("matches",matches);
+		model3.addObject("testing",testing);
+		return model3;
+	}	
 }
+
 

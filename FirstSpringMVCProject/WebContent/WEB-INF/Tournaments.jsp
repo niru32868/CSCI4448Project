@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h1>Tournaments Info</h1>
-	<h3>Create Tournament Here</h3>
+	<h3>Create Tournament Here, MAX 8 participants</h3>
 
 	<form:errors path="tournament1.*"/>
 	
