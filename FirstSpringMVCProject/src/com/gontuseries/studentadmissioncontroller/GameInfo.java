@@ -2,6 +2,7 @@ package com.gontuseries.studentadmissioncontroller;
 
 import javax.persistence.Embeddable;
 
+//help from https://refactoring.guru/design-patterns/flyweight/java/example for flyweight
 @Embeddable
 public class GameInfo {
 
