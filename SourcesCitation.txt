@@ -1,5 +1,7 @@
 
 Just about everything was changed, but there are unremoved DeadCode, or code copied for pom.xml
+
+the pom.xml is mostly from  javawebtutor
 Resources/Code used from: 
 
 
