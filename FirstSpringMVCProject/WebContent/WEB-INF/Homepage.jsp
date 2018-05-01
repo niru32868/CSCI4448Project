@@ -12,7 +12,8 @@
 <body>
      <%--HELP FROM https://www.gontu.org http://javawebtutor.com/articles/spring/spring-mvc-hibernate-crud-example.php 
      http://www.codejava.net/java-ee/jsp/how-to-list-records-in-a-database-table-using-jsp-and-jstl
-     FOR ALL JSP Pages--%> 
+     FOR ALL JSP Pages
+     XML files help from gontu.org--%> 
     <sql:setDataSource
         var="myDS"
         driver="com.mysql.jdbc.Driver"
