@@ -10,6 +10,9 @@
 <title>List of Tournaments</title>
 </head>
 <body>
+     <%--HELP FROM https://www.gontu.org http://javawebtutor.com/articles/spring/spring-mvc-hibernate-crud-example.php 
+     http://www.codejava.net/java-ee/jsp/how-to-list-records-in-a-database-table-using-jsp-and-jstl
+     FOR ALL JSP Pages--%> 
     <sql:setDataSource
         var="myDS"
         driver="com.mysql.jdbc.Driver"
