@@ -33,6 +33,7 @@
                 <th>Game Type</th>
                 <th>Game Description</th>
                  <th>Registration</th>
+                 <th>Unregistration</th>
             </tr>
             <c:forEach var="user" items="${listUsers.rows}">
                 <tr>
@@ -43,11 +44,14 @@
                     <td><c:out value="${user.GameType}" /></td>
                     <td><c:out value="${user.GameDescription}" /></td>
                     <td><a href="/FirstSpringMVCProject/signup/${user.TournamentName}/${user.orderNumber}">Sign Up</a></td>
+                    <td><a href="/FirstSpringMVCProject/removeuser/${user.TournamentName}/${user.orderNumber}">Unregister</a></td>
   
                 </tr>
             </c:forEach>
         </table>
         <caption><h3><a href="/FirstSpringMVCProject/tournament.html">Create Tournament</a></h3></caption>
+         <caption><h3><a href="/FirstSpringMVCProject/deletetournament.html">Delete Tournament</a></h3></caption>
+         <caption><h3><a href="/FirstSpringMVCProject/reportscore.html">Report Score</a></h3></caption>
                    <h4>Each Tournament has 8 MAX participants</h4>
     </div>
 </body>

@@ -1,8 +1,11 @@
 package com.gontuseries.studentadmissioncontroller;
 import java.util.ArrayList;
+
+import org.hibernate.Query;
 //ORIGINAL IS FROM GONTU series, but I basically edited out everything
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,37 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import javax.persistence.Entity;
+//original gotten from gontu series. But everything was changed other than the ClassNames like this one. 
 @Controller
 public class StudentAdmissionController {
-	
-	@RequestMapping(value="/admissionForm.html", method = RequestMethod.GET)
-	public ModelAndView getAdmissionForm() {
-
-		ModelAndView model1 = new ModelAndView("AdmissionForm");
-		
-		return model1;
-	}
-
-	@ModelAttribute
-    public void addingCommonObjects(Model model1) {
-		
-		model1.addAttribute("headerMessage", "Gontu College of Engineering, India");
-	}
-
-	
-	@RequestMapping(value="/submittedForm.html", method=RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student, BindingResult result) {
-		
-		 if (result.hasErrors()) {
-
-				ModelAndView model1 = new ModelAndView("AdmissionForm");
-				return model1;
-		 }
-
-		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
-		return model1;
-	}
 	
 	@RequestMapping(value="/tournament.html", method = RequestMethod.GET)
 	public ModelAndView getTournaments() {
@@ -101,6 +77,78 @@ public class StudentAdmissionController {
 		
 		return model3;
 	}	
+	@RequestMapping(value = "removeuser/{tournamentname}/{id}", method=RequestMethod.GET) //signup Page for teams
+	public ModelAndView removeUser(@PathVariable("id")int id,@PathVariable("tournamentname") String tournamentname) {
+
+		ModelAndView model3 = new ModelAndView("removeUser");
+		
+		return model3;
+	}	
+	@RequestMapping(value="/removeduser.html", method=RequestMethod.POST)
+	public ModelAndView removeduser(@RequestParam("TeamName") String TeamName) {
+		String queryz = "DELETE FROM team WHERE teamName = '" + TeamName + "'"; 
+		
+
+		ModelAndView model2 = new ModelAndView("removeduser");
+		model2.addObject("queryz",queryz);
+		  SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		  Session session = sessionFactory.openSession();
+		  session.beginTransaction();
+		  Query query = session.createSQLQuery(queryz);
+		  query.executeUpdate();
+		  session.getTransaction().commit();
+		  session.close();
+		return model2;
+	}
+	@RequestMapping(value = "reportscore.html", method=RequestMethod.GET) //signup Page for teams
+	public ModelAndView reportScore() {
+
+		ModelAndView model3 = new ModelAndView("reportScore");
+		
+		return model3;
+	}	
+	@RequestMapping(value="/reportedScore.html", method=RequestMethod.POST)
+	public ModelAndView reportedScore(@RequestParam("WinnerTeam") String WinnerTeam,@RequestParam("LoserTeam") String LoserTeam) {
+		String queryz = "DELETE FROM team WHERE teamName = '" + LoserTeam + "'"; 
+		
+
+		ModelAndView model2 = new ModelAndView("reportedScore");
+		model2.addObject("queryz",queryz);
+		model2.addObject("WinnerTeam",WinnerTeam);
+		model2.addObject("LoserTeam",LoserTeam);
+		  SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		  Session session = sessionFactory.openSession();
+		  session.beginTransaction();
+		  Query query = session.createSQLQuery(queryz);
+		  query.executeUpdate();
+		  session.getTransaction().commit();
+		  session.close();
+		return model2;
+	}
+	@RequestMapping(value = "deletetournament.html", method=RequestMethod.GET) //signup Page for teams
+	public ModelAndView deleteTournament() {
+
+		ModelAndView model3 = new ModelAndView("deleteTournament");
+		
+		return model3;
+	}	
+	@RequestMapping(value="/deletedTournament.html", method=RequestMethod.POST)
+	public ModelAndView deletedTournament(@RequestParam("TournamentName") String Tournamentz) {
+		String queryz = "DELETE FROM tournament WHERE TournamentName = '" + Tournamentz + "'"; 
+		
+
+		ModelAndView model2 = new ModelAndView("deletedTournament");
+		model2.addObject("queryz",queryz);
+		model2.addObject("Tournamentz",Tournamentz);
+		  SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		  Session session = sessionFactory.openSession();
+		  session.beginTransaction();
+		  Query query = session.createSQLQuery(queryz);
+		  query.executeUpdate();
+		  session.getTransaction().commit();
+		  session.close();
+		return model2;
+	}
 	@RequestMapping(value = "/submittedTeam.html", method=RequestMethod.POST) //signup Page for teams
 	public ModelAndView submitTeamForm(@ModelAttribute("team1") Team team, BindingResult result) {
 		
